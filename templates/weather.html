@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>What's the weather like in your city?</h2>
+    <form action="" method="POST">
+        <input type="text", name='city' placeholder="City Name" class="form-input"> <br>
+        <button type="submit" class="submit-form">Check</button>
+    </form>
+   
+    {% for weather in weather_data %} 
+    <div class='box'>
+        <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">
+        <p class='city-name'>{{weather.city}}, {{weather.country}}</p>
+        <p class='city-temperature'>{{weather.temperature}}°F</p>
+        <p class='city-descr'>{{weather.description}}</p>
+    </div> 
+    {% endfor %}
+</body>
+</html>
+
